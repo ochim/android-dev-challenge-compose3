@@ -25,10 +25,10 @@ import androidx.compose.ui.graphics.Color
 private val DarkColorPalette = darkColors(
     primary = Green900,
     secondary = Green300,
-    background = Color.Gray,
+    background = Gray,
     surface = White150,
     onPrimary = Color.White,
-    onSecondary = Color.Gray,
+    onSecondary = Gray,
     onBackground = Color.White,
     onSurface = White850
 )
@@ -38,10 +38,10 @@ private val LightColorPalette = lightColors(
     secondary = Pink900,
     background = Color.White,
     surface = White850,
-    onPrimary = Color.Gray,
+    onPrimary = Gray,
     onSecondary = Color.White,
-    onBackground = Color.Gray,
-    onSurface = Color.Gray
+    onBackground = Gray,
+    onSurface = Gray
 )
 
 @Composable

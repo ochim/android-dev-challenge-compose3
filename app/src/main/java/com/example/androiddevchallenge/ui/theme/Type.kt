@@ -56,7 +56,7 @@ val typography = Typography(
         fontFamily = FontFamily(listOf(Font(R.font.nunitosans_semibold))),
         fontWeight = FontWeight.Normal,
         fontSize = 14.sp,
-        letterSpacing = 1.em
+        letterSpacing = 0.1.em
     ),
     caption = TextStyle(
         fontFamily = FontFamily(listOf(Font(R.font.nunitosans_semibold))),
