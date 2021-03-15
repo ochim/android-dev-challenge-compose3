@@ -17,27 +17,50 @@ package com.example.androiddevchallenge.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
+import com.example.androiddevchallenge.R
 
 // Set of Material typography styles to start with
 val typography = Typography(
-    body1 = TextStyle(
-        fontFamily = FontFamily.Default,
+    h1 = TextStyle(
+        fontFamily = FontFamily(listOf(Font(R.font.nunitosans_bold))),
+        fontWeight = FontWeight.Normal,
+        fontSize = 18.sp,
+    ),
+    h2 = TextStyle(
+        fontFamily = FontFamily(listOf(Font(R.font.nunitosans_bold))),
+        fontWeight = FontWeight.Normal,
+        fontSize = 14.sp,
+        letterSpacing = 0.15.em
+    ),
+    subtitle1 = TextStyle(
+        fontFamily = FontFamily(listOf(Font(R.font.nunitosans_light))),
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp
-    )
-        /* Other default text styles to override
-    button = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.W500,
+    ),
+    body1 = TextStyle(
+        fontFamily = FontFamily(listOf(Font(R.font.nunitosans_light))),
+        fontWeight = FontWeight.Normal,
         fontSize = 14.sp
     ),
-    caption = TextStyle(
-        fontFamily = FontFamily.Default,
+    body2 = TextStyle(
+        fontFamily = FontFamily(listOf(Font(R.font.nunitosans_light))),
         fontWeight = FontWeight.Normal,
         fontSize = 12.sp
-    )
-    */
+    ),
+    button = TextStyle(
+        fontFamily = FontFamily(listOf(Font(R.font.nunitosans_semibold))),
+        fontWeight = FontWeight.Normal,
+        fontSize = 14.sp,
+        letterSpacing = 1.em
+    ),
+    caption = TextStyle(
+        fontFamily = FontFamily(listOf(Font(R.font.nunitosans_semibold))),
+        fontWeight = FontWeight.Normal,
+        fontSize = 12.sp
+    ),
 )
