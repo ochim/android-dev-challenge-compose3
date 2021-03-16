@@ -44,6 +44,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.core.view.WindowCompat
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.navigate
+import androidx.navigation.compose.rememberNavController
 import com.example.androiddevchallenge.ui.theme.Gray
 import com.example.androiddevchallenge.ui.theme.MyTheme
 import com.example.androiddevchallenge.ui.theme.Pink900
@@ -64,7 +68,28 @@ class MainActivity : AppCompatActivity() {
 // Start building your app here!
 @Composable
 fun MyApp() {
-    WelcomeScreen(onLogin = {})
+    val navController = rememberNavController()
+    NavHost(navController, startDestination = "welcome") {
+        composable(
+            route = "welcome",
+        ) { backStackEntry ->
+            WelcomeScreen {
+                navController.navigate("login")
+            }
+        }
+        composable(
+            route = "login",
+        ) { backStackEntry ->
+            LoginScreen {
+                navController.navigate("home")
+            }
+        }
+        composable(
+            route = "home",
+        ) { backStackEntry ->
+            HomeScreen()
+        }
+    }
 }
 
 @Composable
