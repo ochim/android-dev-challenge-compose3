@@ -152,7 +152,7 @@ fun WelcomeScreen(onLogin: () -> Unit) {
                         color = if (isLightTheme) Gray else Color.White
                     )
                     val text = "Create account"
-                    MyButton({}, text, isLightTheme)
+                    MyButton({}, text)
                 }
                 Text(
                     text = "Log in",
@@ -172,7 +172,8 @@ fun WelcomeScreen(onLogin: () -> Unit) {
 }
 
 @Composable
-fun MyButton(onClick: () -> Unit, text: String, isLightTheme: Boolean) {
+fun MyButton(onClick: () -> Unit, text: String) {
+    val isLightTheme = MaterialTheme.colors.isLight
     Button(
         { onClick() },
         modifier = Modifier
