@@ -15,10 +15,15 @@
  */
 package com.example.androiddevchallenge
 
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -26,8 +31,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -73,11 +80,42 @@ fun HomeScreen() {
         }
     ) {
         NavHost(navController, startDestination = "bHome") {
-            composable("bHome") { HomeScreen() }
+            composable("bHome") { HomeScreenContent() }
             composable("Favorite") { }
             composable("Profile") { }
             composable("Cart") { }
         }
+    }
+}
+
+@Composable
+fun HomeScreenContent() {
+    Column(
+        modifier = Modifier
+            .padding(start = 16.dp, top = 40.dp, end = 16.dp)
+            .fillMaxWidth()
+    ) {
+        OutlinedTextField(
+            value = "Search",
+            modifier = Modifier
+                .fillMaxWidth(),
+            onValueChange = { s: String -> },
+            leadingIcon = {
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_baseline_search_24),
+                    tint = MaterialTheme.colors.onPrimary,
+                    contentDescription = "Search",
+                    modifier = Modifier.size(18.dp)
+                )
+            },
+            placeholder = {
+                Text(
+                    text = "Search",
+                    color = MaterialTheme.colors.onPrimary,
+                    style = MaterialTheme.typography.body1
+                )
+            }
+        )
     }
 }
 
