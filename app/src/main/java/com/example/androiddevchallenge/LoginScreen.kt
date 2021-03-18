@@ -16,7 +16,9 @@
 package com.example.androiddevchallenge
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.material.MaterialTheme
@@ -58,6 +60,7 @@ fun LoginScreen(onLogin: () -> Unit) {
                     .fillMaxWidth()
             )
             InputForm("Email address")
+            Spacer(modifier = Modifier.height(8.dp))
             InputForm(
                 "Password (8+ characters)",
                 visualTransformation = PasswordVisualTransformation()
@@ -94,7 +97,9 @@ fun LoginScreen(onLogin: () -> Unit) {
                 style = MaterialTheme.typography.body2,
                 color = MaterialTheme.colors.onPrimary,
                 textAlign = TextAlign.Center,
-                modifier = Modifier.paddingFromBaseline(top = 16.dp, bottom = 16.dp).fillMaxWidth()
+                modifier = Modifier
+                    .paddingFromBaseline(top = 16.dp, bottom = 16.dp)
+                    .fillMaxWidth()
             )
             MyButton(onClick = { onLogin() }, text = "Log in")
         }
