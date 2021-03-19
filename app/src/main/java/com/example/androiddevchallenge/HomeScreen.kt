@@ -19,6 +19,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -85,6 +86,7 @@ fun HomeScreen() {
                 )
             }
         )
+
         Column(
             modifier = Modifier
                 .padding(start = 16.dp)
@@ -95,7 +97,6 @@ fun HomeScreen() {
                 modifier = Modifier.paddingFromBaseline(top = 32.dp, bottom = 16.dp),
                 style = MaterialTheme.typography.h1
             )
-
             LazyRow {
                 item {
                     TestData.rowGardenData.forEach {
@@ -105,32 +106,34 @@ fun HomeScreen() {
                 }
             }
         }
-        LazyColumn {
-            item {
-                Row(
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(start = 16.dp, top = 24.dp, bottom = 16.dp, end = 16.dp),
+        ) {
+            Column(
+                modifier = Modifier.weight(9f),
+            ) {
+                Text(
+                    text = "Design your home garden",
+                    style = MaterialTheme.typography.h1,
+                )
+            }
+            Column(
+                modifier = Modifier.weight(1f),
+            ) {
+                Icon(
+                    imageVector = Icons.Filled.FilterList,
                     modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(start = 16.dp, top = 24.dp, bottom = 8.dp, end = 16.dp),
-                ) {
-                    Column(
-                        modifier = Modifier.weight(9f),
-                    ) {
-                        Text(
-                            text = "Design your home garden",
-                            style = MaterialTheme.typography.h1,
-                        )
-                    }
-                    Column(
-                        modifier = Modifier.weight(1f),
-                    ) {
-                        Icon(
-                            imageVector = Icons.Filled.FilterList,
-                            modifier = Modifier
-                                .size(24.dp),
-                            contentDescription = null
-                        )
-                    }
-                }
+                        .size(24.dp),
+                    contentDescription = null
+                )
+            }
+        }
+        LazyColumn(modifier = Modifier.fillMaxHeight()
+        ) {
+            item {
                 columnGardenData.forEach {
                     SingleListLayout(it)
                 }
@@ -178,7 +181,7 @@ fun SingleListLayout(data: Garden) {
         modifier = Modifier
             .wrapContentHeight()
             .height(100.dp)
-            .padding(start = 16.dp, end = 16.dp, bottom = 10.dp),
+            .padding(start = 16.dp, end = 16.dp, bottom = 8.dp),
     ) {
         Card {
             GlideImage(
