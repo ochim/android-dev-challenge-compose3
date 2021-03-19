@@ -131,7 +131,8 @@ fun HomeScreen() {
                 )
             }
         }
-        LazyColumn(modifier = Modifier.fillMaxHeight()
+        LazyColumn(
+            modifier = Modifier.fillMaxHeight()
         ) {
             item {
                 columnGardenData.forEach {
