@@ -1,11 +1,11 @@
-# Put title of your app here
+# Bloom
 <!--- Replace <OWNER> with your Github Username and <REPOSITORY> with the name of your repository. -->
 <!--- You can find both of these in the url bar when you open your repository in github. -->
 ![Workflow result](https://github.com/ochim/android-dev-challenge-compose3/workflows/Check/badge.svg)
 
-
 ## :scroll: Description
 <!--- Describe your app in one or two sentences -->
+[article](https://android-developers.googleblog.com/2021/03/android-dev-challenge-3.html)
 
 ## :bulb: Motivation and Context
 <!--- Optionally point readers to interesting parts of your submission. -->
