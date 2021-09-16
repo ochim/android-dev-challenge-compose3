@@ -15,6 +15,7 @@
  */
 package com.example.androiddevchallenge
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -49,6 +50,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil.compose.rememberImagePainter
 import com.example.androiddevchallenge.data.Garden
 import com.example.androiddevchallenge.data.TestData
 import com.example.androiddevchallenge.data.TestData.columnGardenData
@@ -155,15 +157,17 @@ fun GridListLayout(garden: Garden) {
         Column(
             modifier = Modifier.wrapContentSize()
         ) {
-//            GlideImage(
-//                garden.imgUrl,
-//                modifier = Modifier
-//                    .fillMaxWidth()
-//                    .height(126.dp),
-//                contentDescription = null,
-//                fadeIn = true,
-//                contentScale = ContentScale.Crop
-//            )
+            Image(
+                painter = rememberImagePainter(
+                    data = garden.imgUrl,
+                    builder = {
+                        crossfade(true)
+                    }
+                ),
+                contentDescription = null,
+                modifier = Modifier.fillMaxWidth().height(126.dp),
+                contentScale = ContentScale.Crop
+            )
             Text(
                 modifier = Modifier.padding(10.dp),
                 text = garden.name,
@@ -184,13 +188,17 @@ fun SingleListLayout(data: Garden) {
             .padding(start = 16.dp, end = 16.dp, bottom = 8.dp),
     ) {
         Card {
-//            GlideImage(
-//                data.imgUrl,
-//                modifier = Modifier.size(100.dp),
-//                contentDescription = null,
-//                fadeIn = true,
-//                contentScale = ContentScale.Crop,
-//            )
+            Image(
+                painter = rememberImagePainter(
+                    data = data.imgUrl,
+                    builder = {
+                        crossfade(true)
+                    }
+                ),
+                contentDescription = null,
+                modifier = Modifier.size(100.dp),
+                contentScale = ContentScale.Crop,
+            )
         }
         Column(
             modifier = Modifier.fillMaxWidth()
