@@ -55,7 +55,6 @@ import com.example.androiddevchallenge.data.TestData.columnGardenData
 import com.example.androiddevchallenge.ui.theme.Green300
 import com.example.androiddevchallenge.ui.theme.MyTheme
 import com.example.androiddevchallenge.ui.theme.Pink900
-import dev.chrisbanes.accompanist.glide.GlideImage
 
 @Composable
 fun HomeScreen() {
@@ -156,15 +155,15 @@ fun GridListLayout(garden: Garden) {
         Column(
             modifier = Modifier.wrapContentSize()
         ) {
-            GlideImage(
-                garden.imgUrl,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(126.dp),
-                contentDescription = null,
-                fadeIn = true,
-                contentScale = ContentScale.Crop
-            )
+//            GlideImage(
+//                garden.imgUrl,
+//                modifier = Modifier
+//                    .fillMaxWidth()
+//                    .height(126.dp),
+//                contentDescription = null,
+//                fadeIn = true,
+//                contentScale = ContentScale.Crop
+//            )
             Text(
                 modifier = Modifier.padding(10.dp),
                 text = garden.name,
@@ -185,13 +184,13 @@ fun SingleListLayout(data: Garden) {
             .padding(start = 16.dp, end = 16.dp, bottom = 8.dp),
     ) {
         Card {
-            GlideImage(
-                data.imgUrl,
-                modifier = Modifier.size(100.dp),
-                contentDescription = null,
-                fadeIn = true,
-                contentScale = ContentScale.Crop,
-            )
+//            GlideImage(
+//                data.imgUrl,
+//                modifier = Modifier.size(100.dp),
+//                contentDescription = null,
+//                fadeIn = true,
+//                contentScale = ContentScale.Crop,
+//            )
         }
         Column(
             modifier = Modifier.fillMaxWidth()

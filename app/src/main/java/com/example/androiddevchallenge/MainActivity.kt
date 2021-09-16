@@ -38,11 +38,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.core.view.WindowCompat
-import androidx.navigation.compose.KEY_ROUTE
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
-import androidx.navigation.compose.navigate
 import androidx.navigation.compose.rememberNavController
 import com.example.androiddevchallenge.ui.theme.Gray
 import com.example.androiddevchallenge.ui.theme.Green900
@@ -84,8 +82,8 @@ fun MyApp() {
     )
 
     val navController = rememberNavController()
-    val navBackStackEntry by navController.currentBackStackEntryAsState()
-    val currentRoute = navBackStackEntry?.arguments?.getString(KEY_ROUTE)
+    val navBackStackEntry = navController.currentBackStackEntryAsState()
+    val currentRoute = navBackStackEntry.value?.destination?.route
     val scaffoldState = rememberScaffoldState(rememberDrawerState(DrawerValue.Closed))
 
     Scaffold(
